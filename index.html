@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+      }
+      .currentImage {
+        margin: 0 auto;
+      }
+      img {
+        height: calc(125px + 40vh);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="currentImage">
+        <img src="./poster1.png" class="firstImage" />
+      </div>
+    </main>
+    <script>
+      let images = [];
+
+      images[0] = "./poster1.png";
+      images[1] = "./poster2.png";
+      images[2] = "./poster3.png";
+      images[3] = "./poster4.png";
+      images[4] = "./poster5.png";
+
+      let currentImage = document.querySelector(".firstImage");
+      i = 0;
+      const changeImages = () => {
+        if (i > images.length - 1) {
+          i = 0;
+        }
+        currentImage.src = images[i];
+        i++;
+      };
+
+      setInterval(() => {
+        changeImages();
+      }, 1000);
+    </script>
+  </body>
+</html>
